@@ -37,5 +37,4 @@ variable "connection_draining" {}
 variable "connection_draining_timeout" {}
 
 variable "tags" {
-  type = "map"
 }
