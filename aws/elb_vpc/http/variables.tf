@@ -35,4 +35,7 @@ variable "idle_timeout" {
 
 variable "connection_draining" {}
 variable "connection_draining_timeout" {}
-variable "tags" {}
+
+variable "tags" {
+  type = "map"
+}

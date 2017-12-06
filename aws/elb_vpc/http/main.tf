@@ -2,8 +2,8 @@ resource "aws_elb" "elb" {
   name                        = "${var.name}"
   access_logs                 = "${var.access_logs}"
   security_groups             = "${var.security_groups}"
-  subnets                     = "${var.subnets}"
-  instances                   = "${var.instances}"
+  subnets                     = ["${var.subnets}"]
+  instances                   = ["${var.instances}"]
   internal                    = "${var.internal}"
   listener                    = "${var.listener_1}"
   listener                    = "${var.listener_2}"
