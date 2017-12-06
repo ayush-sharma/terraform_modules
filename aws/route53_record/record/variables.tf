@@ -9,7 +9,3 @@ variable "ttl" {
 variable "records" {
   type = "list"
 }
-
-variable "alias" {
-  type = "list"
-}

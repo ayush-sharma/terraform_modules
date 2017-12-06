@@ -4,5 +4,4 @@ resource "aws_route53_record" "route53_record" {
   type    = "${var.type}"
   ttl     = "${var.ttl}"
   records = ["${var.records}"]
-  alias   = ["${var.alias}"]
 }

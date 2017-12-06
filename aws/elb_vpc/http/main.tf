@@ -1,12 +1,11 @@
 resource "aws_elb" "elb" {
   name                        = "${var.name}"
-  access_logs                 = "${var.access_logs}"
-  security_groups             = "${var.security_groups}"
+  access_logs                 = ["${var.access_logs}"]
+  security_groups             = ["${var.security_groups}"]
   subnets                     = ["${var.subnets}"]
   instances                   = ["${var.instances}"]
   internal                    = "${var.internal}"
-  listener                    = "${var.listener_1}"
-  listener                    = "${var.listener_2}"
+  listener                    = "${var.listener}"
   health_check                = "${var.health_check}"
   cross_zone_load_balancing   = "${var.cross_zone_load_balancing}"
   idle_timeout                = "${var.idle_timeout}"
