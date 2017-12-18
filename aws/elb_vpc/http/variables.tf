@@ -46,9 +46,9 @@ variable "connection_draining_timeout" {
 }
 
 variable "tags" {
-
   type = "map"
+
   default = {
-    created_by  = "Terraform"
+    created_by = "Terraform"
   }
 }

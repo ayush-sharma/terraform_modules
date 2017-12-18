@@ -7,6 +7,5 @@ output "elb_dns" {
 }
 
 output "elb_zone_id" {
-
   value = "${aws_elb.elb.zone_id}"
 }
