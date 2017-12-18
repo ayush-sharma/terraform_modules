@@ -21,4 +21,6 @@ variable "root_disk_volume_size" {}
 
 variable "root_disk_delete_on_termination" {}
 
-variable "security_groups" {}
+variable "security_groups" {
+  type = "list"
+}
