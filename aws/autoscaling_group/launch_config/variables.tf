@@ -1,8 +1,12 @@
 variable "ami_filter_name" {}
 
-variable "ami_filter_virtualization_type" {}
+variable "ami_filter_virtualization_type" {
+  type = "list"
+}
 
-variable "ami_filter_owners" {}
+variable "ami_filter_owners" {
+  type = "list"
+}
 
 variable "instance_type" {}
 
