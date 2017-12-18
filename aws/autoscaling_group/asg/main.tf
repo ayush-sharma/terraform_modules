@@ -17,6 +17,10 @@ resource "aws_autoscaling_group" "autoscaling_group" {
   default_cooldown          = "${var.default_cooldown}"
   load_balancers            = ["${var.load_balancers}"]
 
+  vpc_zone_identifier  = ["${var.vpc_zone_identifier}"]
+  termination_policies = ["${var.termination_policies}"]
+  suspended_processes  = ["${var.suspended_processes}"]
+
   enabled_metrics = [
     "GroupMinSize",
     "GroupMaxSize",

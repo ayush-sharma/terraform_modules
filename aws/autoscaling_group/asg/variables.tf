@@ -26,3 +26,15 @@ variable "tags" {
 }
 
 variable "launch_configuration" {}
+
+variable "vpc_zone_identifier" {
+  type = "list"
+}
+
+variable "termination_policies" {
+  type = "list"
+}
+
+variable "suspended_processes" {
+  type = "list"
+}
