@@ -8,10 +8,10 @@ data "aws_ami" "ami" {
 
   filter {
     name   = "virtualization-type"
-    values = "${var.ami_filter_virtualization_type}"
+    values = ["${var.ami_filter_virtualization_type}"]
   }
 
-  owners = "${var.ami_filter_owners}"
+  owners = ["${var.ami_filter_owners}"]
 }
 
 resource "aws_launch_configuration" "launch_config" {
@@ -20,7 +20,7 @@ resource "aws_launch_configuration" "launch_config" {
   instance_type               = "${var.instance_type}"
   iam_instance_profile        = "${var.iam_instance_profile}"
   key_name                    = "${var.instance_key_name}"
-  security_groups             = "${var.security_groups}"
+  security_groups             = ["${var.security_groups}"]
   associate_public_ip_address = "${var.associate_public_ip_address}"
   enable_monitoring           = false
 

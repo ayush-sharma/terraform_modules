@@ -4,7 +4,7 @@ resource "aws_placement_group" "placement_group" {
 }
 
 resource "aws_autoscaling_group" "autoscaling_group" {
-  availability_zones        = "${var.availability_zones}"
+  availability_zones        = ["${var.availability_zones}"]
   name                      = "${var.name}"
   max_size                  = "${var.max_size}"
   min_size                  = "${var.min_size}"
@@ -15,7 +15,7 @@ resource "aws_autoscaling_group" "autoscaling_group" {
   placement_group           = "${aws_placement_group.placement_group.id}"
   launch_configuration      = "${var.launch_configuration}"
   default_cooldown          = "${var.default_cooldown}"
-  load_balancers            = "${var.load_balancers}"
+  load_balancers            = ["${var.load_balancers}"]
 
   enabled_metrics = [
     "GroupMinSize",
@@ -28,7 +28,7 @@ resource "aws_autoscaling_group" "autoscaling_group" {
     "GroupTotalInstances",
   ]
 
-  tags = "${var.tags}"
+  tags = ["${var.tags}"]
 
   lifecycle {
     create_before_destroy = true
