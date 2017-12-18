@@ -22,11 +22,7 @@ variable "load_balancers" {
 }
 
 variable "tags" {
-  type = "map"
-
-  default = {
-    created_by = "Terraform"
-  }
+  type = "list"
 }
 
 variable "launch_configuration" {}
