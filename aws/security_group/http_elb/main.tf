@@ -62,4 +62,8 @@ resource "aws_security_group" "security_group" {
     created_by  = "Terraform"
     cost_center = "${var.name}"
   }
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }

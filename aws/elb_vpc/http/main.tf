@@ -12,4 +12,8 @@ resource "aws_elb" "elb" {
   connection_draining         = "${var.connection_draining}"
   connection_draining_timeout = "${var.connection_draining_timeout}"
   tags                        = "${var.tags}"
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }

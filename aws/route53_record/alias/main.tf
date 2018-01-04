@@ -8,4 +8,8 @@ resource "aws_route53_record" "route53_record" {
     zone_id                = "${var.alias_zone_id}"
     evaluate_target_health = "${var.alias_evaluate_target_health}"
   }
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
