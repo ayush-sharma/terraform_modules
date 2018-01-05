@@ -48,10 +48,6 @@ resource "aws_iam_role_policy" "iam_role_policy" {
   ]
 }
 EOF
-
-  lifecycle {
-    create_before_destroy = true
-  }
 }
 
 resource "aws_iam_instance_profile" "iam_instance_profile" {

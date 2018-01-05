@@ -14,8 +14,4 @@ resource "aws_cloudwatch_metric_alarm" "cloudwatch_alarm" {
   alarm_actions = ["${var.alarm_actions}"]
 
   insufficient_data_actions = "${var.insufficient_data_actions}"
-
-  lifecycle {
-    create_before_destroy = true
-  }
 }

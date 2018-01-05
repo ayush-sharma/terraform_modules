@@ -11,8 +11,4 @@ resource "aws_autoscaling_notification" "notification" {
   ]
 
   topic_arn = "${var.sns_topic_arn}"
-
-  lifecycle {
-    create_before_destroy = true
-  }
 }
