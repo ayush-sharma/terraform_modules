@@ -1,14 +1,11 @@
-resource "aws_alb" "alb" {  
-  name            = "${var.alb_name}"  
-  subnets         = ["${split(",",var.alb_subnets)}"]
-  security_groups = ["${split(",", var.alb_security_groups)}"]
-  internal        = "${var.internal_alb}"  
-  idle_timeout    = "${var.idle_timeout}"   
-  tags {    
-    Name    = "${var.alb_name}"    
-  }   
-  access_logs {    
-    bucket = "${var.s3_bucket}"    
-    prefix = "ELB-logs"  
-  }
+resource "aws_alb" "alb" {
+  name                       = "${var.name}"
+  subnets                    = ["${var.subnets}"]
+  security_groups            = ["${var.security_groups}"]
+  internal                   = "${var.internal}"
+  idle_timeout               = "${var.idle_timeout}"
+  tags                       = "${var.tags}"
+  access_logs                = ["${var.access_logs}"]
+  load_balancer_type         = "application"
+  enable_deletion_protection = "${var.enable_deletion_protection}"
 }
