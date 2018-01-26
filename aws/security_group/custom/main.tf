@@ -6,7 +6,7 @@ resource "aws_security_group" "security_group" {
   egress  = "${var.egress}"
 
   tags = {
-    Name        = "${var.name}_elb_sg"
+    Name        = "${var.name}_sg"
     created_by  = "Terraform"
     cost_center = "${var.name}"
   }
