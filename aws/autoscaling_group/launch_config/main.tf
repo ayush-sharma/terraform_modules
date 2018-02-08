@@ -29,4 +29,8 @@ resource "aws_launch_configuration" "launch_config" {
     volume_size           = "${var.root_disk_volume_size}"
     delete_on_termination = "${var.root_disk_delete_on_termination}"
   }
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }

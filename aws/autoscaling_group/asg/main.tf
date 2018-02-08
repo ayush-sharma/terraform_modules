@@ -4,18 +4,21 @@ resource "aws_placement_group" "placement_group" {
 }
 
 resource "aws_autoscaling_group" "autoscaling_group" {
-  availability_zones        = ["${var.availability_zones}"]
-  name                      = "${var.name}"
-  max_size                  = "${var.max_size}"
-  min_size                  = "${var.min_size}"
+  availability_zones    = ["${var.availability_zones}"]
+  name                  = "${var.name}"
+  min_size              = "${var.min_size}"
+  max_size              = "${var.max_size}"
+  desired_capacity      = "${var.desired_size}"
+  wait_for_elb_capacity = "${var.wait_for_elb_capacity}"
+
   health_check_grace_period = "${var.health_check_grace_period}"
   health_check_type         = "${var.health_check_type}"
-  desired_capacity          = "${var.desired_size}"
-  force_delete              = false
-  placement_group           = "${aws_placement_group.placement_group.id}"
-  launch_configuration      = "${var.launch_configuration}"
-  default_cooldown          = "${var.default_cooldown}"
-  load_balancers            = ["${var.load_balancers}"]
+
+  force_delete         = false
+  placement_group      = "${aws_placement_group.placement_group.id}"
+  launch_configuration = "${var.launch_configuration}"
+  default_cooldown     = "${var.default_cooldown}"
+  load_balancers       = ["${var.load_balancers}"]
 
   vpc_zone_identifier  = ["${var.vpc_zone_identifier}"]
   termination_policies = ["${var.termination_policies}"]
