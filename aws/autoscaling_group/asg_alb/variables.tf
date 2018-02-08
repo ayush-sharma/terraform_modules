@@ -38,3 +38,5 @@ variable "termination_policies" {
 variable "suspended_processes" {
   type = "list"
 }
+
+variable "wait_for_elb_capacity" {}
